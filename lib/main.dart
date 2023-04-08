@@ -1,3 +1,4 @@
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/cupertino.dart';
 
 import 'app/data/repositories_implementation/authentication_repository_impl.dart';
@@ -9,7 +10,9 @@ import 'app/my_app.dart';
 void main() {
   runApp(
     Injector(
-      conectivityRepository: ConectivityRepositoryImpl(),
+      conectivityRepository: ConectivityRepositoryImpl(
+        Connectivity(),
+      ),
       authenticationRepository: AuthenticationRepositoryImpl(),
       child: const MyApp(),
     ),
